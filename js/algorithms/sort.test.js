@@ -5,6 +5,7 @@ const mergeSort = require('./sort/mergeSort');
 const bubbleSortNaive = bubbleSort.bubbleSortNaive;
 const bubbleSortOptimized = bubbleSort.bubbleSortOptimized;
 const mergeSortTopDown = mergeSort.mergeSortTopDown;
+const mergeSortBottomUp = mergeSort.mergeSortBottomUp;
 
 function sortWithInPlaceAlgo(algo, list) {
     let listCopy = list.map((i) => i);
@@ -19,6 +20,7 @@ test('sorts [9, 10, 100, 23, 5, 3]', (t) => {
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortNaive, unsorted), sorted);
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortOptimized, unsorted), sorted);
     t.deepEqual(mergeSortTopDown(unsorted), sorted);
+    t.deepEqual(mergeSortBottomUp(unsorted), sorted);
     t.end();
 });
 
@@ -29,5 +31,6 @@ test('sorts [9, 10, 100, 23, 5, 3, 55]', (t) => {
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortNaive, unsorted), sorted);
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortOptimized, unsorted), sorted);
     t.deepEqual(mergeSortTopDown(unsorted), sorted);
+    t.deepEqual(mergeSortBottomUp(unsorted), sorted);
     t.end();
 });
