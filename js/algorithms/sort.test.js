@@ -1,6 +1,7 @@
 const test = require('tape');
 const bubbleSort = require('./sort/bubbleSort');
 const mergeSort = require('./sort/mergeSort');
+const selectionSort = require('./sort/selectionSort');
 
 const bubbleSortNaive = bubbleSort.bubbleSortNaive;
 const bubbleSortOptimized = bubbleSort.bubbleSortOptimized;
@@ -19,6 +20,7 @@ test('sorts [9, 10, 100, 23, 5, 3]', (t) => {
 
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortNaive, unsorted), sorted);
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortOptimized, unsorted), sorted);
+    t.deepEqual(sortWithInPlaceAlgo(selectionSort, unsorted), sorted);
     t.deepEqual(mergeSortTopDown(unsorted), sorted);
     t.deepEqual(mergeSortBottomUp(unsorted), sorted);
     t.end();
@@ -30,6 +32,7 @@ test('sorts [9, 10, 100, 23, 5, 3, 55]', (t) => {
 
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortNaive, unsorted), sorted);
     t.deepEqual(sortWithInPlaceAlgo(bubbleSortOptimized, unsorted), sorted);
+    t.deepEqual(sortWithInPlaceAlgo(selectionSort, unsorted), sorted);
     t.deepEqual(mergeSortTopDown(unsorted), sorted);
     t.deepEqual(mergeSortBottomUp(unsorted), sorted);
     t.end();
